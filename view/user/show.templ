@@ -1,0 +1,16 @@
+package user
+
+import (
+    "go-lang-templ/view/Layout"
+    "go-lang-templ/model"
+	"go-lang-templ/view/components"
+)
+
+templ Show(user model.User) {
+    {ctx.Value("user").(string)}
+    @layout.Base(){
+        <h1>hello {user.Email} from the user page </h1>
+        @components.Input("email","email")
+
+    }
+}
